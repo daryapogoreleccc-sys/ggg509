@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeTutor — тьютор по программированию</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>CodeTutor</h1>
+      <p>Тьютор по программированию на JavaScript</p>
+    </header>
+
+    <nav class="task-nav" id="task-nav"></nav>
+
+    <section class="card">
+      <div class="task-header">
+        <h2 id="task-title">Загрузка...</h2>
+        <p id="task-description"></p>
+      </div>
+      <textarea class="code-editor" id="code-editor" spellcheck="false"></textarea>
+      <div class="submit-bar">
+        <button class="submit-btn" id="submit-btn">Проверить</button>
+        <button class="ai-btn" id="ai-btn" style="display:none">🤖 AI-разбор</button>
+        <div class="loading" id="ai-loading">
+          <div class="spinner"></div>
+          <span>AI анализирует...</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="feedback" id="feedback"></div>
+
+    <details class="card settings">
+      <summary class="settings-summary">⚙️ Настройки API (необязательно)</summary>
+      <div class="settings-body">
+        <label class="settings-label" for="api-key-input">OpenRouter API Key</label>
+        <div class="settings-row">
+          <input type="password" class="settings-input" id="api-key-input" placeholder="sk-or-v1-..." />
+          <button class="settings-btn" id="api-key-save">Сохранить</button>
+        </div>
+        <p class="settings-hint">Ключ нужен только для кнопки «AI-разбор». Основная проверка работает без ключа. Получить ключ: <a href="https://openrouter.ai/keys" target="_blank">openrouter.ai/keys</a></p>
+      </div>
+    </details>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
